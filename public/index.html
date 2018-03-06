@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Imageboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1 class="header-title">Imageboard</h1> </br>
+    </header>
+    <div id="main">
+    <div class="form-container card">
+        <h3 class="header-title">Upload a new picture:</h3>
+        <form id="submit-form">
+            <input class="form-input line-input" v-model="formStuff.title" type="text" name="title" placeholder="title"><br>
+            <input class="form-input line-input" v-model="formStuff.description" type="text" name="description" placeholder="description"><br>
+            <input class="form-input line-input" v-model="formStuff.username" type="text" name="username" placeholder="username"><br>
+            <input id="file" class="form-input" type="file" name="file" v-on:change="chooseFile"><br>
+            <button class="action-btn" type="button" @click="uploadFile">Submit</button>
+        </form>
+    </div>
+    <button class="action-btn" @click="loadMoreImages" v-if="moreImages">Load More</button>
+    <div class="grid-container">
+        <div v-for="image in images" class="grid-item" @click="setCurrentImage(image.id)">
+            <h6 class="image-title">{{image.title}}</h6>
+            <div><img v-bind:src="image.image" ></div>
+        </div>
+    </div>
+    <big-image v-if="currentImage" v-bind:id="currentImage" v-on:changed="currentImage=null"></big-image>
+    </div>
+    <script type="x-template" id="myTemplate">
+    <div id="modalwindow">
+        <div id="modal">
+            <div>
+                <div class="modal-header">
+                    <h1><span class="img-title">{{title}}</span> by <span class="img-username">{{username}}</span></h1>
+                    <p class="img-date">-{{created_at | date}}</p>
+                </div>
+                <div style="margin-top:15px">
+                    <img v-bind:src="image">
+                    <h3 class="img-desc">{{description}}</h3>
+                </div>
+            </div>
+            <hr class="seperation">
+            <h4 class="modal-subheading">Add your comment</h4>
+            <form class="img-form">
+                <input placeholder="Write a comment" class="line-input" type="text" v-model="newComment.text"/>
+                <input placeholder="Your username" class="line-input" type="text" v-model="newComment.username"/>
+                <button class="comment-submit" type="button" v-on:click="uploadComment">+</button>
+            </form>
+            <h4 class="modal-subheading">Comments</h4>
+            <div class="comment-card" v-for="comment in comments">
+                <span class="img-date">{{comment.username}}</span> <br><br>
+                <span>{{comment.comment}}</span>
+                <span class="comment-date">{{comment.created_at | date}}</span>
+            </div>
+        </div>
+        <span class="modal-default-button" v-on:click="closeModal" >&#10005;</span>
+    </div>
+    </script>
+    <script src="/js/axios.min.js"></script>
+    <script src="/js/vue.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>

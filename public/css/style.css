@@ -1,0 +1,177 @@
+
+* {
+ -webkit-box-sizing: border-box;
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ font-family: sans-serif;
+}
+
+ img {
+ max-width: 100%;
+ max-height: 270px;
+ display: block;
+ margin-bottom: 0px;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+#modalwindow {
+ background-color: rgba(0,0,0,0.8);
+ position: fixed;
+ z-index: 9999;
+ top: 0px;
+ left: 0px;
+ height: 100%;
+ width: 100%;
+ margin: auto;
+}
+
+#modal {
+ background-color: #fff;
+ position: fixed;
+ width: 70%;
+ height: 80%;
+ top:0px;
+ left:0px;
+ right:0px;
+ bottom:0px;
+ margin: auto;
+ padding:15px;
+ overflow-y: scroll;
+}
+
+.modal-default-button{
+ position: absolute;
+ top: 3%;
+ right: 3%;
+ color: #fff;
+ cursor: pointer;
+ font-size: x-large;
+}
+
+.grid-container {
+ display: grid;
+ /* grid-template-columns: auto auto auto; */
+ grid-template-columns: repeat(3, 1fr);
+ padding: 10px;
+ grid-gap: 10px;
+}
+
+.grid-item {
+ padding: 15px;
+ font-size: 30px;
+ text-align: center;
+ background: #ffffff;
+ border-radius: 2px;
+ box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.header-title {
+ padding: 10px;
+ width: 100%;
+ color: #fff;
+ background-color: #3f51b5;
+ text-align: center;
+}
+
+.image-title {
+ padding: 5px;
+}
+
+.form-container {
+ padding: 10px;
+}
+
+.card {
+ background: #fff;
+ border-radius: 2px;
+ height: 310px;
+ width: 50%;
+ box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+ margin:15px auto;
+}
+
+#submit-form {
+ text-align: center;
+ padding: 10px;
+}
+
+.action-btn {
+ padding: 10px 20px;
+ background-color: #ff4081;
+ color: white;
+ font-weight: bold;
+ font-size: medium;
+}
+
+.form-input {
+ width: 80%;
+ margin: 5px;
+ padding: 10px;
+}
+
+.img-title {
+ color: #3f51b5;
+}
+
+.img-username {
+ color: #ff4081;
+}
+
+.img-date {
+ font-weight: bold;
+}
+
+.img-desc {
+ text-align: center;
+ padding: 10px;
+ font-weight: bold;
+}
+
+.seperation {
+ height: 3px;
+ background-color: #3f51b5;
+ border: none;
+}
+
+.line-input {
+ border: none;
+ border-bottom: 2px solid #3f51b5;
+ padding:10px;
+ font-size: medium;
+}
+
+.comment-submit {
+ height: 30px;
+ width: 30px;
+ border-radius: 15px;
+ color: white;
+ background-color: #ff4081;
+ cursor: pointer;
+}
+
+.modal-subheading {
+ margin:10px 0px;
+ font-weight:bold;
+}
+
+.comment-card {
+ width: 100%;
+ box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+ border-radius: 2px;
+ height: auto;
+ min-height: 60px;
+ padding:10px;
+ position: relative;
+ margin-bottom: 10px;
+}
+
+.comment-date {
+ position: absolute;
+ top: 10px;
+ right: 10px;
+ font-weight: bold;
+ font-size: small;
+ color: #3f51b5;
+}
