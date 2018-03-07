@@ -1,4 +1,4 @@
-# Petition:
+# Image Board Project:
 
 A site where people can go and post an image of their choosing, along with a title and a textual description of that image,
 and others could go and look at that image and make thoughtful remarks about it.
